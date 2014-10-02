@@ -8,7 +8,7 @@ module Bosh::AzureCloud
 
     def put_file(container_name, blob_name, file_path)
       content = File.open(file_path, 'rb') { |file| file.read }
-      blob_service.create_block_blob(container_name, blob_name, content)
+      azure_blob_service.create_block_blob(container_name, blob_name, content)
     end
 
     def blob_exist?(container_name, blob_name)
